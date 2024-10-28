@@ -1,12 +1,14 @@
 package br.sesi.bank.bank_java_jdbc.controller;
 
 import br.sesi.bank.bank_java_jdbc.domain.cliente.DadosCadastroCliente;
+import br.sesi.bank.bank_java_jdbc.domain.conta.Conta;
 import br.sesi.bank.bank_java_jdbc.domain.conta.DadosAberturaConta;
 import br.sesi.bank.bank_java_jdbc.exceptions.RegraDeNegocioException;
 import br.sesi.bank.bank_java_jdbc.service.ContaService;
 
 import java.sql.SQLException;
 import java.util.Scanner;
+import java.util.Set;
 
 public class BankJavaController {
     public ContaService service;
@@ -77,7 +79,7 @@ public class BankJavaController {
 
     public void listarContas() {
         System.out.println("Contas cadastradas: ");
-        var contas = service.listarContasAbertas();
+        Set<Conta> contas = service.listarContasAbertas();
         contas.stream().forEach(System.out::println);
 
         System.out.println("Pressione qualquer tecla e dê ENTER para voltar ao menu principal.");
