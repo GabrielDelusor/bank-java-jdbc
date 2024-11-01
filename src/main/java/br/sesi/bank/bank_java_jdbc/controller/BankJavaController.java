@@ -4,7 +4,7 @@ import br.sesi.bank.bank_java_jdbc.domain.cliente.DadosCadastroCliente;
 import br.sesi.bank.bank_java_jdbc.domain.conta.Conta;
 import br.sesi.bank.bank_java_jdbc.domain.conta.DadosAberturaConta;
 import br.sesi.bank.bank_java_jdbc.exceptions.RegraDeNegocioException;
-import br.sesi.bank.bank_java_jdbc.service.ContaService;
+import br.sesi.bank.bank_java_jdbc.Service.ContaService;
 
 import java.sql.SQLException;
 import java.util.Scanner;
@@ -36,6 +36,7 @@ public class BankJavaController {
                         break;
                     case 2:
                         abrirConta();
+
                         break;
                     case 3:
                         encerrarConta();
