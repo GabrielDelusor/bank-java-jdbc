@@ -6,14 +6,17 @@ import java.math.BigDecimal;
 import java.util.Objects;
 
 public class Conta {
-    Integer numero;
-    BigDecimal valor;
-    Cliente titular;
+    private Integer numero;
+    private BigDecimal valor;
+    private Cliente titular;
+    private boolean ativo;
 
-    public Conta(Integer numero, BigDecimal valor, Cliente titular) {
+
+    public Conta(Integer numero, BigDecimal valor, Cliente titular, Boolean ativo) {
         this.numero = numero;
         this.valor = valor;
         this.titular = titular;
+        this.ativo = ativo;
     }
 
     public boolean possuiSaldo(BigDecimal valor){
@@ -41,6 +44,13 @@ public class Conta {
 
     public BigDecimal getSaldo(){
         return valor;
+    }
+    public boolean isAtivo(){
+        return ativo;
+    }
+
+    public void setAtivo(boolean ativo){
+        this.ativo = ativo;
     }
 
     @Override
