@@ -24,7 +24,7 @@ public class ContaDAO {
         Cliente cliente = new Cliente(dadosDaConta.dadosCliente);
         Conta conta = new Conta(dadosDaConta.numero, BigDecimal.ZERO, cliente, true);
 
-        String sql = "INSERT INTO conta (numero, saldo, cliente_nome, cliente_cpf, cliente_email) " +
+        String sql = "INSERT INTO conta (numero, saldo, cliente_nome, cliente_cpf, cliente_email, ativo) " +
                 "VALUES (?, ?, ?, ?, ?)";
 
         try {
@@ -52,7 +52,7 @@ public class ContaDAO {
                 String nome = resultSet.getString(3);
                 String cpf = resultSet.getString(4);
                 String email = resultSet.getString(5);
-
+                Boolean ativo = resultSet.getBoolean(6);
                 Cliente cliente = new Cliente(new DadosCadastroCliente(nome, cpf, email));
                 Conta conta = new Conta(numero, saldo, cliente, true);
                 contas.add(conta);
